@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import samples from "./data/samples";
 import WelcomePage from "./components/WelcomePage";
-import ConsentPage from "./components/ConsentPage";
+// import ConsentPage from "./components/ConsentPage";
 import SurveyPage from "./components/SurveyPage";
 import ThankYouPage from "./components/ThankYouPage";
 
@@ -21,8 +21,8 @@ export default function App() {
   // Generate a stable session ID once on first render
   const [sessionId] = useState(() => uuidv4());
 
-  const handleStart = useCallback(() => setPage(PAGE.CONSENT), []);
-  const handleConsent = useCallback(() => setPage(PAGE.SURVEY), []);
+  const handleStart = useCallback(() => setPage(PAGE.SURVEY), []);
+  // const handleConsent = useCallback(() => setPage(PAGE.SURVEY), []);
 
   const handleNext = useCallback(
     (result) => {
@@ -42,9 +42,9 @@ export default function App() {
     return <WelcomePage onStart={handleStart} />;
   }
 
-  if (page === PAGE.CONSENT) {
-    return <ConsentPage onConsent={handleConsent} />;
-  }
+  // if (page === PAGE.CONSENT) {
+  //   return <ConsentPage onConsent={handleConsent} />;
+  // }
 
   if (page === PAGE.SURVEY) {
     return (

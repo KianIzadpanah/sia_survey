@@ -36,16 +36,17 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
   function assignRank(method, rank) {
     setRankings((prev) => {
       const next = { ...prev };
-      // Remove this rank from any other method
+      // Clicking the same rank on the same image deselects it
+      if (next[method] === rank) {
+        delete next[method];
+        return next;
+      }
+      // Remove this rank from whichever other image currently holds it
       for (const m in next) {
         if (next[m] === rank) delete next[m];
       }
-      // Toggle off if same method already has this rank
-      if (next[method] === rank) {
-        delete next[method];
-      } else {
-        next[method] = rank;
-      }
+      // Assign the rank to this image
+      next[method] = rank;
       return next;
     });
   }

@@ -108,7 +108,7 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
                 <img
                   src={img}
                   alt={`Image ${label}`}
-                  className={`w-full object-cover rounded-xl border-2 border-${color}-200`}
+                  className={`w-full object-contain rounded-xl border-2 border-${color}-200 bg-slate-100`}
                   style={{ aspectRatio: "4/3" }}
                   onError={(e) => {
                     e.target.style.display = "none";
@@ -213,7 +213,7 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
                     <img
                       src={sample.outputs[method]}
                       alt={`Output ${idx + 1}`}
-                      className="w-full object-cover rounded-xl"
+                      className="w-full object-contain rounded-xl bg-slate-100"
                       style={{ aspectRatio: "1/1" }}
                       onError={(e) => {
                         e.target.style.display = "none";

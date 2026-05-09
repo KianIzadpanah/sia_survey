@@ -31,90 +31,85 @@ export default function WelcomePage({ onStart }) {
 
           {/* Visual analogy diagram */}
           <div className="bg-slate-50 rounded-xl p-5 mb-5">
-            <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4 text-center">
+            <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-5 text-center">
               How the task works
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
+            {/* Row 1: A → A' */}
+            <div className="flex items-center justify-center gap-3 mb-2">
               {/* A */}
-              <div className="flex flex-col items-center">
-                <div className="w-28 h-20 bg-indigo-100 border-2 border-indigo-300 rounded-lg flex items-center justify-center">
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-24 h-16 bg-indigo-100 border-2 border-indigo-300 rounded-lg flex items-center justify-center">
                   <span className="text-2xl font-bold text-indigo-500">A</span>
                 </div>
-                <span className="text-xs text-slate-500 mt-1">
-                  Original source
-                </span>
+                <span className="text-xs text-slate-500">Original</span>
               </div>
 
-              {/* Arrow A→A' */}
-              <div className="flex flex-col items-center sm:mx-2">
-                <div className="sm:rotate-0 rotate-90 flex flex-col items-center">
-                  <div className="flex items-center gap-1">
-                    <div className="w-10 h-0.5 bg-indigo-400"></div>
-                    <span className="text-indigo-500">▶</span>
-                  </div>
-                  <span className="text-xs text-indigo-600 font-medium mt-1 whitespace-nowrap">
-                    example edits
-                  </span>
+              {/* Arrow */}
+              <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                <div className="flex items-center gap-1">
+                  <div className="w-8 h-0.5 bg-indigo-400"></div>
+                  <span className="text-indigo-500 text-sm">▶</span>
                 </div>
+                <span className="text-xs text-indigo-600 font-medium whitespace-nowrap">
+                  edits applied
+                </span>
               </div>
 
               {/* A' */}
-              <div className="flex flex-col items-center">
-                <div className="w-28 h-20 bg-indigo-200 border-2 border-indigo-400 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl font-bold text-indigo-700">
-                    A&prime;
-                  </span>
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-24 h-16 bg-indigo-200 border-2 border-indigo-400 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl font-bold text-indigo-700">A&prime;</span>
                 </div>
-                <span className="text-xs text-slate-500 mt-1">
-                  Edited source
-                </span>
+                <span className="text-xs text-slate-500">Edited</span>
               </div>
+            </div>
 
-              {/* Separator */}
-              <div className="sm:mx-6 my-2 sm:my-0 flex items-center">
-                <div className="w-px h-16 bg-slate-300 hidden sm:block"></div>
-                <div className="sm:hidden w-16 h-px bg-slate-300"></div>
-              </div>
+            {/* "learn from this pair" label */}
+            <p className="text-center text-xs text-indigo-500 font-medium mb-4">
+              ↑ The AI learns what edits happened in this pair
+            </p>
 
+            {/* Divider */}
+            <div className="border-t border-slate-200 mb-4"></div>
+
+            {/* Row 2: B → Output */}
+            <div className="flex items-center justify-center gap-3 mb-2">
               {/* B */}
-              <div className="flex flex-col items-center">
-                <div className="w-28 h-20 bg-emerald-100 border-2 border-emerald-300 rounded-lg flex items-center justify-center">
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-24 h-16 bg-emerald-100 border-2 border-emerald-300 rounded-lg flex items-center justify-center">
                   <span className="text-2xl font-bold text-emerald-600">B</span>
                 </div>
-                <span className="text-xs text-slate-500 mt-1">
-                  Another image
-                </span>
+                <span className="text-xs text-slate-500">New image</span>
               </div>
 
-              {/* Arrow B→Output */}
-              <div className="flex flex-col items-center sm:mx-2">
-                <div className="sm:rotate-0 rotate-90 flex flex-col items-center">
-                  <div className="flex items-center gap-1">
-                    <div className="w-10 h-0.5 bg-emerald-500"></div>
-                    <span className="text-emerald-600">▶</span>
-                  </div>
-                  <span className="text-xs text-emerald-700 font-medium mt-1 whitespace-nowrap">
-                    kept edits only
-                  </span>
+              {/* Arrow */}
+              <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                <div className="flex items-center gap-1">
+                  <div className="w-8 h-0.5 bg-emerald-500"></div>
+                  <span className="text-emerald-600 text-sm">▶</span>
                 </div>
+                <span className="text-xs text-emerald-700 font-medium whitespace-nowrap">
+                  kept edits only
+                </span>
               </div>
 
               {/* Output */}
-              <div className="flex flex-col items-center">
-                <div className="w-28 h-20 bg-emerald-200 border-2 border-emerald-500 rounded-lg flex items-center justify-center relative">
-                  <span className="text-2xl font-bold text-emerald-800">
-                    Output
-                  </span>
+              <div className="flex flex-col items-center gap-1">
+                <div className="relative w-24 h-16 bg-emerald-200 border-2 border-emerald-500 rounded-lg flex items-center justify-center">
+                  <span className="text-lg font-bold text-emerald-800">Output</span>
                   <span className="absolute -top-2.5 -right-2.5 bg-emerald-500 text-white text-xs px-1.5 py-0.5 rounded-full">
                     goal
                   </span>
                 </div>
-                <span className="text-xs text-slate-500 mt-1">
-                  AI-edited result
-                </span>
+                <span className="text-xs text-slate-500">AI result</span>
               </div>
             </div>
+
+            {/* "apply selectively" label */}
+            <p className="text-center text-xs text-emerald-600 font-medium">
+              ↑ The AI applies only the chosen edits to image B
+            </p>
           </div>
 
           <p className="text-slate-600 leading-relaxed">

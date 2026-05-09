@@ -55,7 +55,7 @@ export default function WelcomePage({ onStart }) {
                   <img
                     src="/sia_survey/welcome_imgs/img_a.png"
                     alt="Image A — original source"
-                    className="w-28 h-20 object-contain rounded-xl border-2 border-indigo-300 shadow-sm bg-slate-100"
+                    className="w-32 h-24 object-contain rounded-xl border-2 border-indigo-300 shadow-sm bg-slate-100"
                   />
                   <span className="absolute top-1 left-1 bg-indigo-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">A</span>
                 </div>
@@ -77,7 +77,7 @@ export default function WelcomePage({ onStart }) {
                   <img
                     src="/sia_survey/welcome_imgs/img_a_prime.png"
                     alt="Image A' — edited source"
-                    className="w-28 h-20 object-contain rounded-xl border-2 border-indigo-400 shadow-sm bg-slate-100"
+                    className="w-32 h-24 object-contain rounded-xl border-2 border-indigo-400 shadow-sm bg-slate-100"
                   />
                   <span className="absolute top-1 left-1 bg-indigo-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">A&prime;</span>
                 </div>
@@ -101,7 +101,7 @@ export default function WelcomePage({ onStart }) {
                   <img
                     src="/sia_survey/welcome_imgs/img_b.png"
                     alt="Image B — new target"
-                    className="w-28 h-20 object-contain rounded-xl border-2 border-emerald-300 shadow-sm bg-slate-100"
+                    className="w-32 h-24 object-contain rounded-xl border-2 border-emerald-300 shadow-sm bg-slate-100"
                   />
                   <span className="absolute top-1 left-1 bg-emerald-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">B</span>
                 </div>
@@ -123,7 +123,7 @@ export default function WelcomePage({ onStart }) {
                   <img
                     src="/sia_survey/welcome_imgs/img_b_prime.png"
                     alt="Image B' — output with kept edits only"
-                    className="w-28 h-20 object-contain rounded-xl border-2 border-emerald-500 shadow-sm bg-slate-100"
+                    className="w-32 h-24 object-contain rounded-xl border-2 border-emerald-500 shadow-sm bg-slate-100"
                   />
                   <span className="absolute top-1 left-1 bg-emerald-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">B&prime;</span>
                   <span className="absolute -top-2 -right-2 bg-emerald-500 text-white text-xs px-1.5 py-0.5 rounded-full font-semibold shadow">goal</span>

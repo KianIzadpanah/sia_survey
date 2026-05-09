@@ -27,7 +27,7 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
   const shuffledMethods = useMemo(
     () => shuffleWithSeed(Object.keys(sample.outputs)),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [sample.id]
+    [sample.id],
   );
 
   // rankings: { method: rank_label | null }
@@ -69,16 +69,17 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
     setRankings({});
   }
 
-  const progress = ((currentIndex) / total) * 100;
+  const progress = (currentIndex / total) * 100;
 
   return (
     <div className="min-h-screen bg-slate-50 px-4 py-8">
       <div className="max-w-6xl mx-auto">
-
         {/* Progress bar */}
         <div className="mb-6">
           <div className="flex justify-between text-sm text-slate-500 mb-1.5">
-            <span>Question {currentIndex + 1} of {total}</span>
+            <span>
+              Question {currentIndex + 1} of {total}
+            </span>
             <span>{Math.round(progress)}% complete</span>
           </div>
           <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -96,14 +97,33 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
           </h2>
           <div className="grid grid-cols-3 gap-4">
             {[
-              { label: "A", sublabel: "Original source", img: sample.a, color: "indigo" },
-              { label: "A′", sublabel: "Edited source", img: sample.a_prime, color: "indigo" },
-              { label: "B", sublabel: "New image (target)", img: sample.b, color: "emerald" },
+              {
+                label: "A",
+                sublabel: "Original source",
+                img: sample.a,
+                color: "indigo",
+              },
+              {
+                label: "A′",
+                sublabel: "Edited source",
+                img: sample.a_prime,
+                color: "indigo",
+              },
+              {
+                label: "B",
+                sublabel: "New image",
+                img: sample.b,
+                color: "emerald",
+              },
             ].map(({ label, sublabel, img, color }) => (
               <div key={label} className="flex flex-col">
-                <div className={`text-center text-sm font-semibold mb-1 text-${color}-700`}>
+                <div
+                  className={`text-center text-sm font-semibold mb-1 text-${color}-700`}
+                >
                   {label}
-                  <span className="font-normal text-slate-400 ml-1 text-xs">— {sublabel}</span>
+                  <span className="font-normal text-slate-400 ml-1 text-xs">
+                    — {sublabel}
+                  </span>
                 </div>
                 <img
                   src={img}
@@ -130,8 +150,12 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
         <div className="grid sm:grid-cols-2 gap-4 mb-5">
           <div className="bg-red-50 border border-red-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-5 h-5 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold">✕</span>
-              <span className="text-sm font-semibold text-red-700">Suppressed edits (should NOT appear in B′)</span>
+              <span className="w-5 h-5 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold">
+                ✕
+              </span>
+              <span className="text-sm font-semibold text-red-700">
+                Skipped edits (should NOT appear in the output)
+              </span>
             </div>
             <div className="flex flex-wrap gap-2">
               {sample.suppressed_edits.map((edit) => (
@@ -146,8 +170,12 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
           </div>
           <div className="bg-green-50 border border-green-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-bold">✓</span>
-              <span className="text-sm font-semibold text-green-700">Retained edits (SHOULD appear in B′)</span>
+              <span className="w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-bold">
+                ✓
+              </span>
+              <span className="text-sm font-semibold text-green-700">
+                Applied edits (SHOULD appear in the output)
+              </span>
             </div>
             <div className="flex flex-wrap gap-2">
               {sample.retained_edits.map((edit) => (
@@ -170,8 +198,9 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
                 Rank the 3 best outputs
               </h2>
               <p className="text-sm text-slate-500 mt-0.5">
-                Five AI methods produced the results below. Click the rank buttons under each image.
-                The best result should get <strong>1st</strong>.
+                Five AI methods produced the results below. Click the rank
+                buttons under each image. The best result should get{" "}
+                <strong>1st</strong>.
               </p>
             </div>
             <div className="flex-shrink-0 ml-4">
@@ -190,9 +219,23 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
           {/* Rank legend */}
           <div className="flex gap-3 my-4 flex-wrap">
             {RANK_LABELS.map((r) => (
-              <div key={r} className="flex items-center gap-1.5 text-sm text-slate-500">
-                <span className={`px-2 py-0.5 rounded-full text-xs font-bold border ${RANK_STYLES[r]}`}>{r}</span>
-                <span>= {r === "1st" ? "Best" : r === "2nd" ? "Second best" : "Third best"}</span>
+              <div
+                key={r}
+                className="flex items-center gap-1.5 text-sm text-slate-500"
+              >
+                <span
+                  className={`px-2 py-0.5 rounded-full text-xs font-bold border ${RANK_STYLES[r]}`}
+                >
+                  {r}
+                </span>
+                <span>
+                  ={" "}
+                  {r === "1st"
+                    ? "Best"
+                    : r === "2nd"
+                      ? "Second best"
+                      : "Third best"}
+                </span>
               </div>
             ))}
           </div>
@@ -204,9 +247,13 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
               return (
                 <div key={method} className="flex flex-col gap-2">
                   {/* Image */}
-                  <div className={`relative rounded-xl overflow-hidden ${assignedRank ? RANK_RING[assignedRank] : ""} transition-all duration-150`}>
+                  <div
+                    className={`relative rounded-xl overflow-hidden ${assignedRank ? RANK_RING[assignedRank] : ""} transition-all duration-150`}
+                  >
                     {assignedRank && (
-                      <div className={`absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full text-xs font-bold border ${RANK_STYLES[assignedRank]}`}>
+                      <div
+                        className={`absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full text-xs font-bold border ${RANK_STYLES[assignedRank]}`}
+                      >
                         {assignedRank}
                       </div>
                     )}
@@ -237,19 +284,24 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
                   <div className="flex gap-1 justify-center">
                     {RANK_LABELS.map((rank) => {
                       const isActive = assignedRank === rank;
-                      const isTakenByOther = !isActive && Object.values(rankings).includes(rank);
+                      const isTakenByOther =
+                        !isActive && Object.values(rankings).includes(rank);
                       return (
                         <button
                           key={rank}
                           onClick={() => assignRank(method, rank)}
                           disabled={isTakenByOther}
-                          title={isTakenByOther ? `${rank} is already assigned to another image` : `Mark as ${rank}`}
+                          title={
+                            isTakenByOther
+                              ? `${rank} is already assigned to another image`
+                              : `Mark as ${rank}`
+                          }
                           className={`flex-1 text-xs font-semibold py-1.5 rounded-lg border transition-all duration-100 ${
                             isActive
                               ? `${RANK_STYLES[rank]} shadow-sm`
                               : isTakenByOther
-                              ? "bg-slate-50 border-slate-200 text-slate-300 cursor-not-allowed"
-                              : "bg-white border-slate-200 text-slate-500 hover:border-indigo-300 hover:text-indigo-600 cursor-pointer"
+                                ? "bg-slate-50 border-slate-200 text-slate-300 cursor-not-allowed"
+                                : "bg-white border-slate-200 text-slate-500 hover:border-indigo-300 hover:text-indigo-600 cursor-pointer"
                           }`}
                         >
                           {rank}
@@ -274,7 +326,9 @@ export default function SurveyPage({ sample, currentIndex, total, onNext }) {
                 : "bg-slate-200 text-slate-400 cursor-not-allowed shadow-none"
             }`}
           >
-            {currentIndex + 1 === total ? "Submit Responses →" : "Next Question →"}
+            {currentIndex + 1 === total
+              ? "Submit Responses →"
+              : "Next Question →"}
           </button>
         </div>
 

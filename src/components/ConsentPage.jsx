@@ -8,33 +8,34 @@ export default function ConsentPage({ onConsent }) {
       <div className="max-w-2xl w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Participant Consent</h1>
-          <p className="text-slate-500">Please read the following before continuing.</p>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            Participant Consent
+          </h1>
+          <p className="text-slate-500">
+            Please read the following before continuing.
+          </p>
         </div>
 
         {/* Consent card */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-6">
           <div className="space-y-4 text-slate-700 leading-relaxed text-[15px]">
             <p>
-              <strong>Purpose.</strong> This study collects your preferences on AI-generated images to
-              help evaluate research on selective image editing. Your responses are used solely for
-              academic research.
+              <strong>Purpose.</strong> This study collects your preferences on
+              AI-generated images to help evaluate research on selective image
+              editing. Your responses are used solely for academic research.
             </p>
             <p>
-              <strong>What you will do.</strong> You will view sets of images and rank which outputs
-              best match a described goal. There are no right or wrong answers — we are interested in
-              your genuine perception.
+              <strong>Anonymity.</strong> No personally identifiable information
+              is collected. Each session is assigned a random ID. Your responses
+              cannot be traced back to you.
             </p>
             <p>
-              <strong>Anonymity.</strong> No personally identifiable information is collected. Each
-              session is assigned a random ID. Your responses cannot be traced back to you.
+              <strong>Voluntary participation.</strong> Your participation is
+              entirely voluntary. You may stop at any time without consequence.
             </p>
             <p>
-              <strong>Voluntary participation.</strong> Your participation is entirely voluntary. You
-              may stop at any time without consequence.
-            </p>
-            <p>
-              <strong>Duration.</strong> The study takes approximately 5–10 minutes to complete.
+              <strong>Duration.</strong> The study takes approximately 5–10
+              minutes to complete.
             </p>
           </div>
 
@@ -55,14 +56,25 @@ export default function ConsentPage({ onConsent }) {
                 }`}
               >
                 {checked && (
-                  <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 12 12">
-                    <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    className="w-3 h-3 text-white"
+                    fill="none"
+                    viewBox="0 0 12 12"
+                  >
+                    <path
+                      d="M2 6l3 3 5-5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 )}
               </div>
             </div>
             <span className="text-slate-700 text-[15px] leading-snug">
-              I have read and understood the above. I voluntarily agree to participate in this study.
+              I have read and understood the above. I voluntarily agree to
+              participate in this study.
             </span>
           </label>
         </div>

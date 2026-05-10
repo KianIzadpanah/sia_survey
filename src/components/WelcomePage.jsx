@@ -38,12 +38,20 @@ export default function WelcomePage({ onStart }) {
             {/* Edit legend */}
             <div className="flex flex-wrap justify-center gap-3 mb-5">
               <div className="flex items-center gap-1.5 bg-red-50 border border-red-200 rounded-full px-3 py-1">
-                <span className="w-4 h-4 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold flex-shrink-0">✕</span>
-                <span className="text-xs text-red-700 font-medium">Skipped: Sunglasses</span>
+                <span className="w-4 h-4 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
+                  ✕
+                </span>
+                <span className="text-xs text-red-700 font-medium">
+                  Skipped: Sunglasses
+                </span>
               </div>
               <div className="flex items-center gap-1.5 bg-green-50 border border-green-200 rounded-full px-3 py-1">
-                <span className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>
-                <span className="text-xs text-green-700 font-medium">Kept: Laughing</span>
+                <span className="w-4 h-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
+                  ✓
+                </span>
+                <span className="text-xs text-green-700 font-medium">
+                  Kept: Laughing
+                </span>
               </div>
             </div>
 
@@ -57,7 +65,9 @@ export default function WelcomePage({ onStart }) {
                     alt="Image A — original source"
                     className="w-32 h-24 object-contain rounded-xl border-2 border-indigo-300 shadow-sm bg-slate-100"
                   />
-                  <span className="absolute top-1 left-1 bg-indigo-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">A</span>
+                  <span className="absolute top-1 left-1 bg-indigo-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">
+                    A
+                  </span>
                 </div>
                 <span className="text-xs text-slate-500">Original source</span>
               </div>
@@ -68,7 +78,9 @@ export default function WelcomePage({ onStart }) {
                   <div className="w-8 h-0.5 bg-indigo-400"></div>
                   <span className="text-indigo-500 text-sm">▶</span>
                 </div>
-                <span className="text-xs text-indigo-600 font-medium whitespace-nowrap">all edits</span>
+                <span className="text-xs text-indigo-600 font-medium whitespace-nowrap">
+                  all edits
+                </span>
               </div>
 
               {/* A' */}
@@ -79,7 +91,9 @@ export default function WelcomePage({ onStart }) {
                     alt="Image A' — edited source"
                     className="w-32 h-24 object-contain rounded-xl border-2 border-indigo-400 shadow-sm bg-slate-100"
                   />
-                  <span className="absolute top-1 left-1 bg-indigo-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">A&prime;</span>
+                  <span className="absolute top-1 left-1 bg-indigo-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">
+                    A&prime;
+                  </span>
                 </div>
                 <span className="text-xs text-slate-500">Edited source</span>
               </div>
@@ -87,7 +101,8 @@ export default function WelcomePage({ onStart }) {
 
             {/* "learn from this pair" label */}
             <p className="text-center text-xs text-indigo-500 font-medium mb-4">
-              ↑ The AI learns what edits happened in this pair (Laughing + Sunglasses)
+              ↑ The AI learns what edits happened in this pair (Laughing +
+              Sunglasses)
             </p>
 
             {/* Divider */}
@@ -103,7 +118,9 @@ export default function WelcomePage({ onStart }) {
                     alt="Image B — new target"
                     className="w-32 h-24 object-contain rounded-xl border-2 border-emerald-300 shadow-sm bg-slate-100"
                   />
-                  <span className="absolute top-1 left-1 bg-emerald-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">B</span>
+                  <span className="absolute top-1 left-1 bg-emerald-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">
+                    B
+                  </span>
                 </div>
                 <span className="text-xs text-slate-500">New image</span>
               </div>
@@ -114,7 +131,9 @@ export default function WelcomePage({ onStart }) {
                   <div className="w-8 h-0.5 bg-emerald-500"></div>
                   <span className="text-emerald-600 text-sm">▶</span>
                 </div>
-                <span className="text-xs text-emerald-700 font-medium whitespace-nowrap">kept only</span>
+                <span className="text-xs text-emerald-700 font-medium whitespace-nowrap">
+                  kept only
+                </span>
               </div>
 
               {/* B' */}
@@ -125,8 +144,12 @@ export default function WelcomePage({ onStart }) {
                     alt="Image B' — output with kept edits only"
                     className="w-32 h-24 object-contain rounded-xl border-2 border-emerald-500 shadow-sm bg-slate-100"
                   />
-                  <span className="absolute top-1 left-1 bg-emerald-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">B&prime;</span>
-                  <span className="absolute -top-2 -right-2 bg-emerald-500 text-white text-xs px-1.5 py-0.5 rounded-full font-semibold shadow">goal</span>
+                  <span className="absolute top-1 left-1 bg-emerald-700 text-white text-xs font-bold px-1.5 py-0.5 rounded-md leading-tight">
+                    B&prime;
+                  </span>
+                  <span className="absolute -top-2 -right-2 bg-emerald-500 text-white text-xs px-1.5 py-0.5 rounded-full font-semibold shadow">
+                    goal
+                  </span>
                 </div>
                 <span className="text-xs text-slate-500">Output (ideal)</span>
               </div>
@@ -239,7 +262,7 @@ export default function WelcomePage({ onStart }) {
         {/* Estimate + CTA */}
         <div className="text-center">
           <p className="text-slate-500 text-sm mb-5">
-            ⏱ Estimated time: <strong>5–10 minutes</strong> &nbsp;·&nbsp; No
+            ⏱ Estimated time: <strong>10–15 minutes</strong> &nbsp;·&nbsp; No
             sign-in required
           </p>
 

@@ -26,8 +26,8 @@ const samples = [
     a: "/sia_survey/images/sample_01/img_a.png",
     a_prime: "/sia_survey/images/sample_01/img_a_prime.png",
     b: "/sia_survey/images/sample_01/img_b.png",
-    suppressed_edits: ["add star sunglasses"],
-    retained_edits: ["laugh expression"],
+    suppressed_edits: ["lipstick"],
+    retained_edits: ["open eyes"],
     outputs: {
       EditTransfer: "/sia_survey/images/sample_01/EditTransfer.png",
       LoRWeB: "/sia_survey/images/sample_01/LoRWeB.png",
